@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d4611f758e7eb355f365de9c5935d301",
+    "content-hash": "48879dae2d911c789ed5a8159e91fc33",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -769,6 +769,102 @@
                 }
             ],
             "time": "2020-09-14T14:23:00+00:00"
+        },
+        {
+            "name": "microsoft/azure-storage-blob",
+            "version": "1.5.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Azure/azure-storage-blob-php.git",
+                "reference": "2475330963372d519387cb8135d6a9cfd42272da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Azure/azure-storage-blob-php/zipball/2475330963372d519387cb8135d6a9cfd42272da",
+                "reference": "2475330963372d519387cb8135d6a9cfd42272da",
+                "shasum": ""
+            },
+            "require": {
+                "microsoft/azure-storage-common": "~1.5",
+                "php": ">=5.6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MicrosoftAzure\\Storage\\Blob\\": "src/Blob"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Azure Storage PHP Client Library",
+                    "email": "dmsh@microsoft.com"
+                }
+            ],
+            "description": "This project provides a set of PHP client libraries that make it easy to access Microsoft Azure Storage Blob APIs.",
+            "keywords": [
+                "azure",
+                "blob",
+                "php",
+                "sdk",
+                "storage"
+            ],
+            "support": {
+                "issues": "https://github.com/Azure/azure-storage-blob-php/issues",
+                "source": "https://github.com/Azure/azure-storage-blob-php/tree/v1.5.2"
+            },
+            "time": "2020-12-29T02:22:11+00:00"
+        },
+        {
+            "name": "microsoft/azure-storage-common",
+            "version": "1.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Azure/azure-storage-common-php.git",
+                "reference": "e5738035891546075bd369954e8af121d65ebd6d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Azure/azure-storage-common-php/zipball/e5738035891546075bd369954e8af121d65ebd6d",
+                "reference": "e5738035891546075bd369954e8af121d65ebd6d",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~6.0|^7.0",
+                "php": ">=5.6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MicrosoftAzure\\Storage\\Common\\": "src/Common"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Azure Storage PHP Client Library",
+                    "email": "dmsh@microsoft.com"
+                }
+            ],
+            "description": "This project provides a set of common code shared by Azure Storage Blob, Table, Queue and File PHP client libraries.",
+            "keywords": [
+                "azure",
+                "common",
+                "php",
+                "sdk",
+                "storage"
+            ],
+            "support": {
+                "issues": "https://github.com/Azure/azure-storage-common-php/issues",
+                "source": "https://github.com/Azure/azure-storage-common-php/tree/v1.5.1"
+            },
+            "time": "2020-12-28T07:59:51+00:00"
         },
         {
             "name": "pear/console_getopt",
