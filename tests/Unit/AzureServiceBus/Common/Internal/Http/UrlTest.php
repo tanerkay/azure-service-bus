@@ -28,7 +28,6 @@ namespace Tests\Unit\AzureServiceBus\Common\Internal\Http;
 use AzureServiceBus\Common\Internal\Http\Url;
 use Tests\Framework\TestResources;
 use AzureServiceBus\Common\Internal\Resources;
-use AzureServiceBus\Common\Internal\InvalidArgumentTypeException;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -176,7 +175,7 @@ class UrlTest extends TestCase
         $invalidKey = new \DateTime();
         $value = 'ValidValue';
         $url = new Url($urlString);
-        $this->expectException(get_class(new InvalidArgumentTypeException(gettype(''))));
+        $this->expectException(\Error::class);
 
         // Test
         $url->setQueryVariable($invalidKey, $value);
@@ -192,7 +191,7 @@ class UrlTest extends TestCase
         $invalidKey = new \DateTime();
         $value = 'ValidValue';
         $url = new Url($urlString);
-        $this->expectException(get_class(new \InvalidArgumentException(Resources::NULL_OR_EMPTY_MSG)));
+        $this->expectException(\Error::class);
 
         // Test
         $url->setQueryVariable($invalidKey, $value);
@@ -208,7 +207,7 @@ class UrlTest extends TestCase
         $key = 'ValidKey';
         $invalidValue = new \DateTime();
         $url = new Url($urlString);
-        $this->expectException(get_class(new InvalidArgumentTypeException(gettype(''))));
+        $this->expectException(\Error::class);
 
         // Test
         $url->setQueryVariable($key, $invalidValue);
@@ -225,7 +224,7 @@ class UrlTest extends TestCase
         $url = new Url($urlString);
 
         // Test
-        $url->setQueryVariable($key, Resources::EMPTY_STRING, true);
+        $url->setQueryVariable($key, Resources::EMPTY_STRING);
 
         // Assert
         $queryVariables = $url->getQueryVariables();

@@ -23,7 +23,7 @@
  * @link      https://github.com/windowsazure/azure-sdk-for-php
  */
 
-namespace Tests\mock\AzureServiceBus\Common\Internal\Filters;
+namespace Tests\Mock\AzureServiceBus\Common\Internal\Filters;
 
 use AzureServiceBus\Common\Internal\Http\IHttpClient;
 use AzureServiceBus\Common\Internal\IServiceFilter;

@@ -140,11 +140,11 @@ class ServiceBusQueueTest extends ScenarioTestBase
 //        $bp->setMessageLocation($messageLocation);
         $bp->setReplyTo('test@test.com');
         $bp->setMessageId($issueId);
-        $bp->setCorrelationId('correlationid' + $label);
+        $bp->setCorrelationId('correlationid' . $label);
         $bp->setDeliveryCount(1);
         $bp->setLockedUntilUtc(new \DateTime('2/4/1984'));
-        $bp->setLockLocation($label + 'locallocation');
-        $bp->setLockToken($label + 'locltoken');
+        $bp->setLockLocation($label . 'locallocation');
+        $bp->setLockToken($label . 'locltoken');
         $bp->setSequenceNumber(12);
         $message->setBrokerProperties($bp);
 

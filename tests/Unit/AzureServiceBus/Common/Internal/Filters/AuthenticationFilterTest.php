@@ -47,5 +47,11 @@ use PHPUnit\Framework\TestCase;
  */
 class AuthenticationFilterTest extends TestCase
 {
-
+    /**
+     * @doesNotPerformAssertions
+     */
+    public function testDummy()
+    {
+        // dummy test to get rid of warning "No tests found in class 'Tests\Framework\RestProxyTestBase' "
+    }
 }

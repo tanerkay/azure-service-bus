@@ -26,7 +26,7 @@
 namespace Tests\Unit\AzureServiceBus\Common\Internal\Http;
 
 use Tests\Framework\TestResources;
-use Tests\mock\AzureServiceBus\Common\Internal\Filters\SimpleFilterMock;
+use Tests\Mock\AzureServiceBus\Common\Internal\Filters\SimpleFilterMock;
 use AzureServiceBus\Common\Internal\Resources;
 use AzureServiceBus\Common\Internal\Http\HttpClient;
 use AzureServiceBus\Common\Internal\Http\Url;
@@ -299,7 +299,7 @@ class HttpClientTest extends TestCase
         // Assert
         $this->assertArrayHasKey($expectedHeader, $channel->getHeaders());
         $this->assertTrue(isset($response));
-        $this->assertContains($expectedResponseSubstring, $response);
+        $this->assertStringContainsString($expectedResponseSubstring, $response);
     }
 
     /**
@@ -326,8 +326,8 @@ class HttpClientTest extends TestCase
         $this->assertArrayHasKey($expectedHeader1, $channel->getHeaders());
         $this->assertArrayHasKey($expectedHeader2, $channel->getHeaders());
         $this->assertTrue(isset($response));
-        $this->assertContains($expectedResponseSubstring1, $response);
-        $this->assertContains($expectedResponseSubstring2, $response);
+        $this->assertStringContainsString($expectedResponseSubstring1, $response);
+        $this->assertStringContainsString($expectedResponseSubstring2, $response);
     }
 
     /**

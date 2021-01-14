@@ -80,7 +80,7 @@ class ValidateTest extends TestCase
      */
     public function testIsStringWithNonString()
     {
-        $this->expectException(get_class(new InvalidArgumentTypeException('')));
+        $this->expectException(\Error::class);
         Validate::isString(new \DateTime(), 'string');
     }
 
@@ -331,7 +331,7 @@ class ValidateTest extends TestCase
         $function = Validate::getIsValidUri();
 
         // Assert
-        $this->assertInternalType('object', $function);
+        $this->assertIsObject($function);
     }
 
     /**

@@ -23,7 +23,7 @@
  * @link      https://github.com/windowsazure/azure-sdk-for-php
  */
 
-namespace Tests\mock\AzureServiceBus\Common\Internal\Authentication;
+namespace Tests\Mock\AzureServiceBus\Common\Internal\Authentication;
 
 use AzureServiceBus\Common\Internal\Authentication\OAuthScheme;
 use AzureServiceBus\Common\Internal\OAuthRestProxy;

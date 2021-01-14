@@ -457,8 +457,8 @@ class UtilitiesTest extends TestCase
         // Assert
         $this->assertNotNull($actual1);
         $this->assertNotNull($actual2);
-        $this->assertInternalType('string', $actual1);
-        $this->assertInternalType('string', $actual2);
+        $this->assertIsString($actual1);
+        $this->assertIsString($actual2);
         $this->assertNotEquals($actual1, $actual2);
     }
 

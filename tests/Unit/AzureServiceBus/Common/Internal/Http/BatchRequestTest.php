@@ -63,10 +63,9 @@ class BatchRequestTest extends TestCase
         $batchReq->appendContext($context);
         $batchReq->encode();
         $resultBody = $batchReq->getBody();
-        $resultHeader = $batchReq->getHeaders();
 
         // Assert
-        $this->assertContains($body, $resultBody);
+        $this->assertStringContainsString($body, $resultBody);
     }
 
     /**
@@ -89,8 +88,8 @@ class BatchRequestTest extends TestCase
         $resultHeader = $batchReq->getHeaders();
 
         // Assert
-        $this->assertEquals(1, count($resultHeader));
-        $this->assertContains('multipart/mixed', $resultHeader['Content-Type']);
+        $this->assertCount(1, $resultHeader);
+        $this->assertStringContainsString('multipart/mixed', $resultHeader['Content-Type']);
     }
 
     /**

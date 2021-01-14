@@ -128,9 +128,7 @@ class WrapTokenManagerTest extends ServiceRestProxyTestBase
      */
     public function testGetAccessTokenFailedWithInvalidUserName()
     {
-        $this->expectException(get_class(
-            new ServiceException(''))
-        );
+        $this->expectException(\InvalidArgumentException::class);
         $settings = ServiceBusSettings::createFromConnectionString(
             TestResources::getServiceBusConnectionString()
         );
@@ -156,9 +154,7 @@ class WrapTokenManagerTest extends ServiceRestProxyTestBase
      */
     public function testGetAccessTokenFailedWithInvalidPassword()
     {
-        $this->expectException(get_class(
-            new ServiceException(''))
-        );
+        $this->expectException(\InvalidArgumentException::class);
         $settings = ServiceBusSettings::createFromConnectionString(
             TestResources::getServiceBusConnectionString()
         );
