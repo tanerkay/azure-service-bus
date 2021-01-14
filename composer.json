@@ -1,13 +1,31 @@
 {
-    "name": "goavega-software/azureservicebus",
+    "name": "tanerkay/azure-service-bus",
     "description": "This is a fork of now abandoned windows-azure for Service Bus.",
     "keywords": ["php", "azure", "sdk"],
     "license": "Apache-2.0",
     "type": "package",
-    "authors": [{
-        "name": "Azure Service Bus PHP SDK",
-        "email": "opensource@goavega.com"
-    }],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/tanerkay/laminas-captcha"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/tanerkay/laminas-mail"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/tanerkay/laminas-mime"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/tanerkay/laminas-recaptcha"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/tanerkay/laminas-json"
+        }
+    ],
     "require": {
         "php": ">=7.2.0",
         "pear/net_url2": "^2.2",
@@ -18,8 +36,7 @@
         "laminas/laminas-mail": "^2.7"
     },
     "require-dev": {
-        "phpunit/phpunit": "^8.0",
-        "phpdocumentor/phpdocumentor": "^2.8"
+        "phpunit/phpunit": "^9.0"
     },
     "autoload": {
         "psr-4": { "AzureServiceBus\\": "src/" }
