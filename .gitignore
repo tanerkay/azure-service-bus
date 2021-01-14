@@ -1,14 +1,7 @@
-bin/api
-bin/logs
-bin/coverage
-channel/
-*.tgz
-phpunit.xml
-cache.properties
+# Vendor files
 vendor
+
+# IDE files
 nbproject
-phpcs-checkstyle.tmp
-composer.phar
 .vscode/
 .idea/
-
