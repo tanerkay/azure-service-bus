@@ -1,70 +1,28 @@
 # Azure Service Bus SDK for PHP
 
-This is a fork of now abandoned Azure SDK for PHP which only focuses on bringing Service Bus to PHP. This fork does not have support for Tables, Blobs, Media Services, Management.
+This is a repo built from a fork by github user `sn123` of the no longer maintained Azure SDK for PHP. This now only focuses on bringing Service Bus to PHP. This fork does not have support for Tables, Blobs, Media Services, Management.
 
 All unit tests were run after the code cleanup and few still fail. This is pretty much work in progress - please help us in testing this library/SDK.
 
 # Features
 
-
 * Service Bus
-  * Queues: create, list and delete queues; send, receive, unlock and delete messages
-  * Topics: create, list, and delete topics; create, list, and delete subscriptions; send, receive, unlock and delete messages; create, list, and delete rules
+  * Queues:
+      - create, list and delete queues
+      - send, receive, unlock and delete messages
+  * Topics
+      - create, list, and delete topics
+      - create, list, and delete subscriptions
+      - send, receive, unlock and delete messages
+      - create, list and delete rules
 
 # Getting Started
-> **Note**
->
-> The recommended way to resolve dependencies is to install them using the [Composer package manager](http://getcomposer.org).
 
-## Install via Composer
-
-* Create a file named **composer.json** in the root of your project and add the following code to it:
-
-  ```json
-  {
-      "require": {
-          "goavega-software/azureservicebus": "^1.0"
-      }
-  }
-  ```
-
-* Download **[composer.phar](http://getcomposer.org/composer.phar)** in your project root.
-
-* Open a command prompt and execute this in your project root
-
-  ```
-  php composer.phar install
-  ```
-
-  > **Note**
-  >
-  > On Windows, you will also need to add the Git executable to your PATH environment variable.
-
+`composer require tanerkay/azure-service-bus`
+  
 # Usage
 
 ## Getting Started
-
-There are four basic steps that have to be performed before you can make a call to any Microsoft Azure API when using the libraries.
-
-* First, include the autoloader script:
-
-  ```PHP
-  require_once "vendor/autoload.php";
-  ```
-
-* Include the namespaces you are going to use.
-
-  To create any Microsoft Azure service client you need to use the **ServicesBuilder** class:
-
-  ```PHP
-  use AzureServiceBus\Common\ServicesBuilder;
-  ```
-
-  To process exceptions you need:
-
-  ```PHP
-  use AzureServiceBus\Common\ServiceException;
-  ```
 
 * To instantiate the service client you will also need a valid connection string. The format is:
 
@@ -99,7 +57,7 @@ There are four basic steps that have to be performed before you can make a call 
 
   * For Service Bus:
 
-    ```PHP
+    ```php
     $serviceBusRestProxy = ServicesBuilder::getInstance()->createServiceBusService($connectionString);
     ```
 
@@ -110,20 +68,20 @@ First, make sure you have Azure PowerShell installed, then in a PowerShell comma
 Add-AzureAccount # this will sign you in
 New-AzureSBNamespace -CreateACSNamespace $true -Name 'mytestbusname' -Location 'West US' -NamespaceType 'Messaging'
 ```
-If it is sucessful, you will get the connection string in the PowerShell output. If you get connection errors with it and the conection string looks like Endpoint=sb://..., change it to **Endpoint=https://...**
+If it is successful, you will get the connection string in the PowerShell output. If you get connection errors with it and the conection string looks like Endpoint=sb://..., change it to **Endpoint=https://...**
 
 ### Create a Queue
 
 ```PHP
 try {
-  $queueInfo = new QueueInfo("myqueue");
+    $queueInfo = new QueueInfo("myqueue");
 
-  // Create queue.
-  $serviceBusRestProxy->createQueue($queueInfo);
+    // Create queue.
+    $serviceBusRestProxy->createQueue($queueInfo);
 } catch(ServiceException $e){
-  $code = $e->getCode();
-  $error_message = $e->getMessage();
-  echo $code.": ".$error_message."<br />";
+    $code = $e->getCode();
+    $error_message = $e->getMessage();
+    echo $code.": ".$error_message."<br />";
 }
 ```
 
