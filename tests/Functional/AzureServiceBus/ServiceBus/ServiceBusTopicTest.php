@@ -30,7 +30,7 @@ use AzureServiceBus\Common\Internal\Resources;
 use AzureServiceBus\ServiceBus\Models\BrokeredMessage;
 use AzureServiceBus\ServiceBus\Models\ListTopicsOptions;
 use AzureServiceBus\ServiceBus\Models\ReceiveMessageOptions;
-use AzureServiceBus\ServiceBus\models\RuleInfo;
+use AzureServiceBus\ServiceBus\Models\RuleInfo;
 use AzureServiceBus\ServiceBus\Models\SqlFilter;
 use AzureServiceBus\ServiceBus\Models\SubscriptionInfo;
 use AzureServiceBus\ServiceBus\Models\TopicInfo;

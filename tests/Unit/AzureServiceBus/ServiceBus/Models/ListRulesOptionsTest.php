@@ -23,13 +23,13 @@
  * @link      https://github.com/WindowsAzure/azure-sdk-for-php
  */
 
-namespace Tests\Unit\AzureServiceBus\ServiceBus\models;
+namespace Tests\Unit\AzureServiceBus\ServiceBus\Models;
 
-use AzureServiceBus\ServiceBus\Models\EmptyRuleAction;
+use AzureServiceBus\ServiceBus\Models\ListRulesOptions;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Unit tests for class EmptyRuleAction.
+ * Unit tests for class WrapAccessTokenResult.
  *
  * @category  Microsoft
  *
@@ -41,19 +41,19 @@ use PHPUnit\Framework\TestCase;
  *
  * @link      https://github.com/WindowsAzure/azure-sdk-for-php
  */
-class EmptyRuleActionTest extends TestCase
+class ListRulesOptionsTest extends TestCase
 {
     /**
-     * @covers \AzureServiceBus\ServiceBus\Models\EmptyRuleAction::__construct
+     * @covers \AzureServiceBus\ServiceBus\Models\ListRulesOptions::__construct
      */
-    public function testEmptyRuleActionConstructor()
+    public function testListRulesOptionsConstructor()
     {
         // Setup
 
         // Test
-        $getRuleResult = new EmptyRuleAction();
+        $listRulesOptions = new ListRulesOptions();
 
         // Assert
-        $this->assertNotNull($getRuleResult);
+        $this->assertNotNull($listRulesOptions);
     }
 }

@@ -23,9 +23,9 @@
  * @link      https://github.com/WindowsAzure/azure-sdk-for-php
  */
 
-namespace Tests\Unit\AzureServiceBus\ServiceBus\models;
+namespace Tests\Unit\AzureServiceBus\ServiceBus\Models;
 
-use AzureServiceBus\ServiceBus\Models\SqlFilter;
+use AzureServiceBus\ServiceBus\Models\ListOptions;
 
 use PHPUnit\Framework\TestCase;
 
@@ -42,35 +42,35 @@ use PHPUnit\Framework\TestCase;
  *
  * @link      https://github.com/WindowsAzure/azure-sdk-for-php
  */
-class SqlFilterTest extends TestCase
+class ListOptionsTest extends TestCase
 {
     /**
-     * @covers \AzureServiceBus\ServiceBus\Models\SqlFilter::__construct
+     * @covers \AzureServiceBus\ServiceBus\Models\ListOptions::__construct
      */
-    public function testSqlFilterConstructor()
+    public function testListOptionsConstructor()
     {
         // Setup
 
         // Test
-        $sqlFilter = new SqlFilter();
+        $listOptions = new ListOptions();
 
         // Assert
-        $this->assertNotNull($sqlFilter);
+        $this->assertNotNull($listOptions);
     }
 
     /** 
-     * @covers \AzureServiceBus\ServiceBus\Models\SqlFilter::getSqlExpression
-     * @covers \AzureServiceBus\ServiceBus\Models\SqlFilter::setSqlExpression
+     * @covers \AzureServiceBus\ServiceBus\Models\ListOptions::getSkip
+     * @covers \AzureServiceBus\ServiceBus\Models\ListOptions::setSkip
      */
-    public function testGetSetSqlExpression()
+    public function testGetSetSkip()
     {
         // Setup
-        $expected = 'testSqlExpression';
-        $sqlFilter = new SqlFilter();
+        $expected = 'testSkip';
+        $listOptions = new ListOptions();
 
         // Test
-        $sqlFilter->setSqlExpression($expected);
-        $actual = $sqlFilter->getSqlExpression();
+        $listOptions->setSkip($expected);
+        $actual = $listOptions->getSkip();
 
         // Assert 
         $this->assertEquals(
@@ -80,18 +80,18 @@ class SqlFilterTest extends TestCase
     }
 
     /** 
-     * @covers \AzureServiceBus\ServiceBus\Models\SqlFilter::getCompatibilityLevel
-     * @covers \AzureServiceBus\ServiceBus\Models\SqlFilter::setCompatibilityLevel
+     * @covers \AzureServiceBus\ServiceBus\Models\ListOptions::getTop
+     * @covers \AzureServiceBus\ServiceBus\Models\ListOptions::setTop
      */
-    public function testGetSetCompatibilityLevel()
+    public function testGetSetTop()
     {
         // Setup
-        $expected = 'testCompatibilityLevel';
-        $filter = new SqlFilter();
+        $expected = 'testTop';
+        $listOptions = new ListOptions();
 
         // Test
-        $filter->setCompatibilityLevel($expected);
-        $actual = $filter->getCompatibilityLevel();
+        $listOptions->setTop($expected);
+        $actual = $listOptions->getTop();
 
         // Assert 
         $this->assertEquals(

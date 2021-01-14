@@ -23,13 +23,13 @@
  * @link      https://github.com/WindowsAzure/azure-sdk-for-php
  */
 
-namespace Tests\Unit\AzureServiceBus\ServiceBus\models;
+namespace Tests\Unit\AzureServiceBus\ServiceBus\Models;
 
-use AzureServiceBus\ServiceBus\Models\ListRulesOptions;
+use AzureServiceBus\ServiceBus\Models\CorrelationFilter;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Unit tests for class WrapAccessTokenResult.
+ * Unit tests for class CorrelationFilter.
  *
  * @category  Microsoft
  *
@@ -41,19 +41,40 @@ use PHPUnit\Framework\TestCase;
  *
  * @link      https://github.com/WindowsAzure/azure-sdk-for-php
  */
-class ListRulesOptionsTest extends TestCase
+class CorrelationFilterTest extends TestCase
 {
     /**
-     * @covers \AzureServiceBus\ServiceBus\Models\ListRulesOptions::__construct
+     * @covers \AzureServiceBus\ServiceBus\Models\CorrelationFilter::__construct
      */
-    public function testListRulesOptionsConstructor()
+    public function testCorrelationFilterConstructor()
     {
         // Setup
 
         // Test
-        $listRulesOptions = new ListRulesOptions();
+        $getRuleResult = new CorrelationFilter();
 
         // Assert
-        $this->assertNotNull($listRulesOptions);
+        $this->assertNotNull($getRuleResult);
+    }
+
+    /** 
+     * @covers \AzureServiceBus\ServiceBus\Models\CorrelationFilter::getCorrelationId
+     * @covers \AzureServiceBus\ServiceBus\Models\CorrelationFilter::setCorrelationId
+     */
+    public function testGetSetCorrelationId()
+    {
+        // Setup
+        $expected = 'testCorrelationId';
+        $className = new CorrelationFilter();
+
+        // Test
+        $className->setCorrelationId($expected);
+        $actual = $className->getCorrelationId();
+
+        // Assert 
+        $this->assertEquals(
+            $expected,
+            $actual
+        );
     }
 }

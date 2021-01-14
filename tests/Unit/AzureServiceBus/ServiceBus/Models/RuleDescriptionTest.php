@@ -23,12 +23,12 @@
  * @link      https://github.com/WindowsAzure/azure-sdk-for-php
  */
 
-namespace Tests\Unit\AzureServiceBus\ServiceBus\models;
+namespace Tests\Unit\AzureServiceBus\ServiceBus\Models;
 
 use AzureServiceBus\ServiceBus\Internal\Action;
 use AzureServiceBus\ServiceBus\Internal\Filter;
 use AzureServiceBus\ServiceBus\Models\RuleDescription;
-use AzureServiceBus\ServiceBus\Models\RuleInfo;
+
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -44,62 +44,35 @@ use PHPUnit\Framework\TestCase;
  *
  * @link      https://github.com/WindowsAzure/azure-sdk-for-php
  */
-class RuleInfoTest extends TestCase
+class RuleDescriptionTest extends TestCase
 {
     /**
-     * @covers \AzureServiceBus\ServiceBus\Models\RuleInfo::__construct
+     * @covers \AzureServiceBus\ServiceBus\Models\RuleDescription::__construct
      */
-    public function testRuleInfoConstructor()
+    public function testRuleDescriptionConstructor()
     {
         // Setup
-        $expected = 'testRuleInfoName';
 
         // Test
-        $ruleInfo = new RuleInfo($expected);
-        $actual = $ruleInfo->getTitle();
+        $ruleDescription = new RuleDescription();
 
         // Assert
-        $this->assertNotNull($ruleInfo);
-        $this->assertEquals(
-            $expected,
-            $actual
-        );
+        $this->assertNotNull($ruleDescription);
     }
 
     /** 
-     * @covers \AzureServiceBus\ServiceBus\Models\RuleInfo::getRuleDescription
-     * @covers \AzureServiceBus\ServiceBus\Models\RuleInfo::setRuleDescription
-     */
-    public function testGetSetRuleDescription()
-    {
-        // Setup
-        $expected = new RuleDescription();
-        $ruleInfo = new RuleInfo();
-
-        // Test
-        $ruleInfo->setRuleDescription($expected);
-        $actual = $ruleInfo->getRuleDescription();
-
-        // Assert 
-        $this->assertEquals(
-            $expected,
-            $actual
-        );
-    }
-
-    /** 
-     * @covers \AzureServiceBus\ServiceBus\Models\RuleInfo::getFilter
-     * @covers \AzureServiceBus\ServiceBus\Models\RuleInfo::setFilter
+     * @covers \AzureServiceBus\ServiceBus\Models\RuleDescription::getFilter
+     * @covers \AzureServiceBus\ServiceBus\Models\RuleDescription::setFilter
      */
     public function testGetSetFilter()
     {
         // Setup
         $expected = new Filter();
-        $ruleInfo = new RuleInfo();
+        $ruleDescription = new RuleDescription();
 
         // Test
-        $ruleInfo->setFilter($expected);
-        $actual = $ruleInfo->getFilter();
+        $ruleDescription->setFilter($expected);
+        $actual = $ruleDescription->getFilter();
 
         // Assert 
         $this->assertEquals(
@@ -109,18 +82,18 @@ class RuleInfoTest extends TestCase
     }
 
     /** 
-     * @covers \AzureServiceBus\ServiceBus\Models\RuleInfo::getAction
-     * @covers \AzureServiceBus\ServiceBus\Models\RuleInfo::setAction
+     * @covers \AzureServiceBus\ServiceBus\Models\RuleDescription::getAction
+     * @covers \AzureServiceBus\ServiceBus\Models\RuleDescription::setAction
      */
     public function testGetSetAction()
     {
         // Setup
         $expected = new Action();
-        $ruleInfo = new RuleInfo();
+        $ruleDescription = new RuleDescription();
 
         // Test
-        $ruleInfo->setAction($expected);
-        $actual = $ruleInfo->getAction();
+        $ruleDescription->setAction($expected);
+        $actual = $ruleDescription->getAction();
 
         // Assert 
         $this->assertEquals(
@@ -130,18 +103,18 @@ class RuleInfoTest extends TestCase
     }
 
     /** 
-     * @covers \AzureServiceBus\ServiceBus\Models\RuleInfo::getName
-     * @covers \AzureServiceBus\ServiceBus\Models\RuleInfo::setName
+     * @covers \AzureServiceBus\ServiceBus\Models\RuleDescription::getName
+     * @covers \AzureServiceBus\ServiceBus\Models\RuleDescription::setName
      */
     public function testGetSetName()
     {
         // Setup
         $expected = 'testName';
-        $ruleInfo = new RuleInfo();
+        $ruleDescription = new RuleDescription();
 
         // Test
-        $ruleInfo->setName($expected);
-        $actual = $ruleInfo->getName();
+        $ruleDescription->setName($expected);
+        $actual = $ruleDescription->getName();
 
         // Assert 
         $this->assertEquals(

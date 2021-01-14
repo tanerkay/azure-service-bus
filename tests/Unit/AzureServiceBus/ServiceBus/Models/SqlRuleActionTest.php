@@ -23,13 +23,14 @@
  * @link      https://github.com/WindowsAzure/azure-sdk-for-php
  */
 
-namespace Tests\Unit\AzureServiceBus\ServiceBus\models;
+namespace Tests\Unit\AzureServiceBus\ServiceBus\Models;
 
-use AzureServiceBus\ServiceBus\Models\CorrelationFilter;
+use AzureServiceBus\ServiceBus\Models\SqlRuleAction;
+
 use PHPUnit\Framework\TestCase;
 
 /**
- * Unit tests for class CorrelationFilter.
+ * Unit tests for class WrapAccessTokenResult.
  *
  * @category  Microsoft
  *
@@ -41,35 +42,35 @@ use PHPUnit\Framework\TestCase;
  *
  * @link      https://github.com/WindowsAzure/azure-sdk-for-php
  */
-class CorrelationFilterTest extends TestCase
+class SqlRuleActionTest extends TestCase
 {
     /**
-     * @covers \AzureServiceBus\ServiceBus\Models\CorrelationFilter::__construct
+     * @covers \AzureServiceBus\ServiceBus\Models\SqlRuleAction::__construct
      */
-    public function testCorrelationFilterConstructor()
+    public function testSqlRuleActionConstructor()
     {
         // Setup
 
         // Test
-        $getRuleResult = new CorrelationFilter();
+        $sqlRuleAction = new SqlRuleAction();
 
         // Assert
-        $this->assertNotNull($getRuleResult);
+        $this->assertNotNull($sqlRuleAction);
     }
 
     /** 
-     * @covers \AzureServiceBus\ServiceBus\Models\CorrelationFilter::getCorrelationId
-     * @covers \AzureServiceBus\ServiceBus\Models\CorrelationFilter::setCorrelationId
+     * @covers \AzureServiceBus\ServiceBus\Models\SqlRuleAction::getSqlExpression
+     * @covers \AzureServiceBus\ServiceBus\Models\SqlRuleAction::setSqlExpression
      */
-    public function testGetSetCorrelationId()
+    public function testGetSetSqlExpression()
     {
         // Setup
-        $expected = 'testCorrelationId';
-        $className = new CorrelationFilter();
+        $expected = 'testSqlExpression';
+        $sqlRuleAction = new SqlRuleAction();
 
         // Test
-        $className->setCorrelationId($expected);
-        $actual = $className->getCorrelationId();
+        $sqlRuleAction->setSqlExpression($expected);
+        $actual = $sqlRuleAction->getSqlExpression();
 
         // Assert 
         $this->assertEquals(

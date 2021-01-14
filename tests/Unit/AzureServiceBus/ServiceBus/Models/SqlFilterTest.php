@@ -23,9 +23,10 @@
  * @link      https://github.com/WindowsAzure/azure-sdk-for-php
  */
 
-namespace Tests\Unit\AzureServiceBus\ServiceBus\models;
+namespace Tests\Unit\AzureServiceBus\ServiceBus\Models;
 
-use AzureServiceBus\ServiceBus\Models\ReceiveMessageOptions;
+use AzureServiceBus\ServiceBus\Models\SqlFilter;
+
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -41,35 +42,35 @@ use PHPUnit\Framework\TestCase;
  *
  * @link      https://github.com/WindowsAzure/azure-sdk-for-php
  */
-class ReceiveMessageOptionsTest extends TestCase
+class SqlFilterTest extends TestCase
 {
     /**
-     * @covers \AzureServiceBus\ServiceBus\Models\ReceiveMessageOptions::__construct
+     * @covers \AzureServiceBus\ServiceBus\Models\SqlFilter::__construct
      */
-    public function testReceiveMessageOptionsConstructor()
+    public function testSqlFilterConstructor()
     {
         // Setup
 
         // Test
-        $receiveMessageOptions = new ReceiveMessageOptions();
+        $sqlFilter = new SqlFilter();
 
         // Assert
-        $this->assertNotNull($receiveMessageOptions);
+        $this->assertNotNull($sqlFilter);
     }
 
     /** 
-     * @covers \AzureServiceBus\ServiceBus\Models\ReceiveMessageOptions::getTimeout
-     * @covers \AzureServiceBus\ServiceBus\Models\ReceiveMessageOptions::setTimeout
+     * @covers \AzureServiceBus\ServiceBus\Models\SqlFilter::getSqlExpression
+     * @covers \AzureServiceBus\ServiceBus\Models\SqlFilter::setSqlExpression
      */
-    public function testGetSetTimeout()
+    public function testGetSetSqlExpression()
     {
         // Setup
-        $expected = 'testTimeout';
-        $receiveMessageOptions = new ReceiveMessageOptions();
+        $expected = 'testSqlExpression';
+        $sqlFilter = new SqlFilter();
 
         // Test
-        $receiveMessageOptions->setTimeout($expected);
-        $actual = $receiveMessageOptions->getTimeout();
+        $sqlFilter->setSqlExpression($expected);
+        $actual = $sqlFilter->getSqlExpression();
 
         // Assert 
         $this->assertEquals(
@@ -79,18 +80,18 @@ class ReceiveMessageOptionsTest extends TestCase
     }
 
     /** 
-     * @covers \AzureServiceBus\ServiceBus\Models\ReceiveMessageOptions::getReceiveMode
-     * @covers \AzureServiceBus\ServiceBus\Models\ReceiveMessageOptions::setReceiveMode
+     * @covers \AzureServiceBus\ServiceBus\Models\SqlFilter::getCompatibilityLevel
+     * @covers \AzureServiceBus\ServiceBus\Models\SqlFilter::setCompatibilityLevel
      */
-    public function testGetSetReceiveMode()
+    public function testGetSetCompatibilityLevel()
     {
         // Setup
-        $expected = 'testReceiveMode';
-        $receiveMessageOptions = new ReceiveMessageOptions();
+        $expected = 'testCompatibilityLevel';
+        $filter = new SqlFilter();
 
         // Test
-        $receiveMessageOptions->setReceiveMode($expected);
-        $actual = $receiveMessageOptions->getReceiveMode();
+        $filter->setCompatibilityLevel($expected);
+        $actual = $filter->getCompatibilityLevel();
 
         // Assert 
         $this->assertEquals(

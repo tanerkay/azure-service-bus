@@ -23,10 +23,9 @@
  * @link      https://github.com/WindowsAzure/azure-sdk-for-php
  */
 
-namespace Tests\Unit\AzureServiceBus\ServiceBus\models;
+namespace Tests\Unit\AzureServiceBus\ServiceBus\Models;
 
-use AzureServiceBus\ServiceBus\Models\ListOptions;
-
+use AzureServiceBus\ServiceBus\Models\ReceiveMessageOptions;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -42,35 +41,35 @@ use PHPUnit\Framework\TestCase;
  *
  * @link      https://github.com/WindowsAzure/azure-sdk-for-php
  */
-class ListOptionsTest extends TestCase
+class ReceiveMessageOptionsTest extends TestCase
 {
     /**
-     * @covers \AzureServiceBus\ServiceBus\Models\ListOptions::__construct
+     * @covers \AzureServiceBus\ServiceBus\Models\ReceiveMessageOptions::__construct
      */
-    public function testListOptionsConstructor()
+    public function testReceiveMessageOptionsConstructor()
     {
         // Setup
 
         // Test
-        $listOptions = new ListOptions();
+        $receiveMessageOptions = new ReceiveMessageOptions();
 
         // Assert
-        $this->assertNotNull($listOptions);
+        $this->assertNotNull($receiveMessageOptions);
     }
 
     /** 
-     * @covers \AzureServiceBus\ServiceBus\Models\ListOptions::getSkip
-     * @covers \AzureServiceBus\ServiceBus\Models\ListOptions::setSkip
+     * @covers \AzureServiceBus\ServiceBus\Models\ReceiveMessageOptions::getTimeout
+     * @covers \AzureServiceBus\ServiceBus\Models\ReceiveMessageOptions::setTimeout
      */
-    public function testGetSetSkip()
+    public function testGetSetTimeout()
     {
         // Setup
-        $expected = 'testSkip';
-        $listOptions = new ListOptions();
+        $expected = 'testTimeout';
+        $receiveMessageOptions = new ReceiveMessageOptions();
 
         // Test
-        $listOptions->setSkip($expected);
-        $actual = $listOptions->getSkip();
+        $receiveMessageOptions->setTimeout($expected);
+        $actual = $receiveMessageOptions->getTimeout();
 
         // Assert 
         $this->assertEquals(
@@ -80,18 +79,18 @@ class ListOptionsTest extends TestCase
     }
 
     /** 
-     * @covers \AzureServiceBus\ServiceBus\Models\ListOptions::getTop
-     * @covers \AzureServiceBus\ServiceBus\Models\ListOptions::setTop
+     * @covers \AzureServiceBus\ServiceBus\Models\ReceiveMessageOptions::getReceiveMode
+     * @covers \AzureServiceBus\ServiceBus\Models\ReceiveMessageOptions::setReceiveMode
      */
-    public function testGetSetTop()
+    public function testGetSetReceiveMode()
     {
         // Setup
-        $expected = 'testTop';
-        $listOptions = new ListOptions();
+        $expected = 'testReceiveMode';
+        $receiveMessageOptions = new ReceiveMessageOptions();
 
         // Test
-        $listOptions->setTop($expected);
-        $actual = $listOptions->getTop();
+        $receiveMessageOptions->setReceiveMode($expected);
+        $actual = $receiveMessageOptions->getReceiveMode();
 
         // Assert 
         $this->assertEquals(

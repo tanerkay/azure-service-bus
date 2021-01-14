@@ -23,14 +23,13 @@
  * @link      https://github.com/WindowsAzure/azure-sdk-for-php
  */
 
-namespace Tests\Unit\AzureServiceBus\ServiceBus\models;
+namespace Tests\Unit\AzureServiceBus\ServiceBus\Models;
 
-use AzureServiceBus\ServiceBus\Models\SqlRuleAction;
-
+use AzureServiceBus\ServiceBus\Models\TrueFilter;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Unit tests for class WrapAccessTokenResult.
+ * Unit tests for class TrueFilter.
  *
  * @category  Microsoft
  *
@@ -42,40 +41,19 @@ use PHPUnit\Framework\TestCase;
  *
  * @link      https://github.com/WindowsAzure/azure-sdk-for-php
  */
-class SqlRuleActionTest extends TestCase
+class TrueFilterTest extends TestCase
 {
     /**
-     * @covers \AzureServiceBus\ServiceBus\Models\SqlRuleAction::__construct
+     * @covers \AzureServiceBus\ServiceBus\Models\TrueFilter::__construct
      */
-    public function testSqlRuleActionConstructor()
+    public function testTrueFilterConstructor()
     {
         // Setup
 
         // Test
-        $sqlRuleAction = new SqlRuleAction();
+        $getRuleResult = new TrueFilter();
 
         // Assert
-        $this->assertNotNull($sqlRuleAction);
-    }
-
-    /** 
-     * @covers \AzureServiceBus\ServiceBus\Models\SqlRuleAction::getSqlExpression
-     * @covers \AzureServiceBus\ServiceBus\Models\SqlRuleAction::setSqlExpression
-     */
-    public function testGetSetSqlExpression()
-    {
-        // Setup
-        $expected = 'testSqlExpression';
-        $sqlRuleAction = new SqlRuleAction();
-
-        // Test
-        $sqlRuleAction->setSqlExpression($expected);
-        $actual = $sqlRuleAction->getSqlExpression();
-
-        // Assert 
-        $this->assertEquals(
-            $expected,
-            $actual
-        );
+        $this->assertNotNull($getRuleResult);
     }
 }

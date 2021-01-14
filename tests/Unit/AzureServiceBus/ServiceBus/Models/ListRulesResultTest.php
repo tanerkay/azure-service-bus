@@ -23,13 +23,14 @@
  * @link      https://github.com/WindowsAzure/azure-sdk-for-php
  */
 
-namespace Tests\Unit\AzureServiceBus\ServiceBus\models;
+namespace Tests\Unit\AzureServiceBus\ServiceBus\Models;
 
-use AzureServiceBus\ServiceBus\Models\TrueFilter;
+use AzureServiceBus\ServiceBus\Models\ListRulesResult;
+
 use PHPUnit\Framework\TestCase;
 
 /**
- * Unit tests for class TrueFilter.
+ * Unit tests for class WrapAccessTokenResult.
  *
  * @category  Microsoft
  *
@@ -41,19 +42,19 @@ use PHPUnit\Framework\TestCase;
  *
  * @link      https://github.com/WindowsAzure/azure-sdk-for-php
  */
-class TrueFilterTest extends TestCase
+class ListRulesResultTest extends TestCase
 {
     /**
-     * @covers \AzureServiceBus\ServiceBus\Models\TrueFilter::__construct
+     * @covers \AzureServiceBus\ServiceBus\Models\ListRulesResult::__construct
      */
-    public function testTrueFilterConstructor()
+    public function testListRulesResultConstructor()
     {
         // Setup
 
         // Test
-        $getRuleResult = new TrueFilter();
+        $listRulesResult = new ListRulesResult();
 
         // Assert
-        $this->assertNotNull($getRuleResult);
+        $this->assertNotNull($listRulesResult);
     }
 }
