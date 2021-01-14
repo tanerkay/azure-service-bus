@@ -156,7 +156,7 @@ class WrapTokenManager
     /**
      * Creates a SCOPE URI with specified target URI.
      *
-     * @param array $targetUri The target URI
+     * @param string $targetUri The target URI
      *
      * @return string
      */
