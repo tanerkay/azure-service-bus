@@ -83,7 +83,7 @@ class Entry extends AtomBase
     /**
      * The link of the entry.
      *
-     * @var string
+     * @var string|array
      */
     protected $link;
 

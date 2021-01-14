@@ -193,7 +193,6 @@ class ServiceRestProxy extends RestProxy
 
                 default:
                     throw new \Exception(Resources::INVALID_ACH_MSG);
-                    break;
                 }
             }
             $value = $accessCondition->getValue();

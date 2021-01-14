@@ -27,28 +27,16 @@ namespace AzureServiceBus\Common;
 
 use AzureServiceBus\Common\Internal\Authentication\StorageAuthScheme;
 use AzureServiceBus\Common\Internal\Http\IHttpClient;
-
-use AzureServiceBus\Common\Internal\Resources;
+use AzureServiceBus\Common\Internal\RestProxy;
 use AzureServiceBus\Common\Internal\Serialization\ISerializer;
-use AzureServiceBus\Common\Internal\Utilities;
 use AzureServiceBus\Common\Internal\Http\HttpClient;
 use AzureServiceBus\Common\Internal\Filters\HeadersFilter;
-use AzureServiceBus\Common\Internal\Filters\AuthenticationFilter;
-use AzureServiceBus\Common\Internal\Filters\WrapFilter;
 use AzureServiceBus\Common\Internal\Serialization\XmlSerializer;
 use AzureServiceBus\Common\Internal\Authentication\SharedKeyAuthScheme;
-use AzureServiceBus\Common\Internal\Authentication\TableSharedKeyLiteAuthScheme;
-use AzureServiceBus\Common\Internal\ServiceManagementSettings;
 use AzureServiceBus\Common\Internal\ServiceBusSettings;
-use AzureServiceBus\ServiceBus\Internal\IServiceBus;
 use AzureServiceBus\ServiceBus\Internal\IWrap;
 use AzureServiceBus\ServiceBus\ServiceBusRestProxy;
 use AzureServiceBus\ServiceBus\Internal\WrapRestProxy;
-use AzureServiceBus\ServiceManagement\Internal\IServiceManagement;
-use AzureServiceBus\ServiceManagement\ServiceManagementRestProxy;
-
-use AzureServiceBus\Common\Internal\OAuthRestProxy;
-use AzureServiceBus\Common\Internal\Authentication\OAuthScheme;
 
 /**
  * Builds azure service objects.
@@ -143,9 +131,9 @@ class ServicesBuilder
      *
      * @param string $connectionString The configuration connection string
      *
-     * @return IServiceBus
+     * @return RestProxy
      */
-    public function createServiceBusService($connectionString)
+    public function createServiceBusService($connectionString): RestProxy
     {
         $settings = ServiceBusSettings::createFromConnectionString(
             $connectionString
@@ -171,52 +159,11 @@ class ServicesBuilder
     }
 
     /**
-     * Builds a service management object.
-     *
-     * @param string $connectionString The configuration connection string
-     *
-     * @return IServiceManagement
-     */
-    public function createServiceManagementService($connectionString)
-    {
-        $settings = ServiceManagementSettings::createFromConnectionString(
-            $connectionString
-        );
-
-        $certificatePath = $settings->getCertificatePath();
-        $httpClient = new HttpClient($certificatePath);
-        $serializer = $this->serializer();
-        $uri = Utilities::tryAddUrlScheme(
-            $settings->getEndpointUri(),
-            Resources::HTTPS_SCHEME
-        );
-
-        $serviceManagementWrapper = new ServiceManagementRestProxy(
-            $httpClient,
-            $settings->getSubscriptionId(),
-            $uri,
-            $serializer
-        );
-
-        // Adding headers filter
-        $headers = [];
-
-        $headers[Resources::X_MS_VERSION] = Resources::SM_API_LATEST_VERSION;
-
-        $headersFilter = new HeadersFilter($headers);
-        $serviceManagementWrapper = $serviceManagementWrapper->withFilter(
-            $headersFilter
-        );
-
-        return $serviceManagementWrapper;
-    }
-
-    /**
      * Gets the static instance of this class.
      *
      * @return ServicesBuilder
      */
-    public static function getInstance()
+    public static function getInstance(): ServicesBuilder
     {
         if (!isset(self::$_instance)) {
             self::$_instance = new self();

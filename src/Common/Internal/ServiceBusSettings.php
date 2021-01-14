@@ -67,6 +67,11 @@ class ServiceBusSettings extends ServiceSettings {
     /**
      * @var string
      */
+    private $_filter;
+
+    /**
+     * @var string
+     */
     private $_namespace;
 
     /**
@@ -159,8 +164,8 @@ class ServiceBusSettings extends ServiceSettings {
 
     /**
      * Creates new Service Bus settings instance.
-     * @param type $serviceBusEndpoint The Service Bus endpoint uri
-     * @param type $filter
+     * @param string $serviceBusEndpoint The Service Bus endpoint uri
+     * @param $filter
      */
     public function __construct(
         $serviceBusEndpoint,
@@ -174,6 +179,7 @@ class ServiceBusSettings extends ServiceSettings {
     /**
      * @param array $tokenizedSettings
      * @param string $connectionString
+     * @return ServiceBusSettings
      */
     private static function createServiceBusWithWrapAuthentication(array $tokenizedSettings, $connectionString = '') {
         $required = [
@@ -185,7 +191,7 @@ class ServiceBusSettings extends ServiceSettings {
             self::$_wrapEndpointUriSetting,
         ];
 
-        $matchedSpecs = self::getMatchedSpecs($tokenizedSettings, $required, $optional, $connectionString);
+        self::getMatchedSpecs($tokenizedSettings, $required, $optional, $connectionString);
 
         $endpoint = Utilities::tryGetValueInsensitive(
             Resources::SERVICE_BUS_ENDPOINT_NAME,
@@ -229,7 +235,7 @@ class ServiceBusSettings extends ServiceSettings {
         $optional = [
             self::$_wrapEndpointUriSetting,
         ];
-        $matchedSpecs = self::getMatchedSpecs($tokenizedSettings, $required, $optional, $connectionString);
+        self::getMatchedSpecs($tokenizedSettings, $required, $optional, $connectionString);
 
         $endpoint = Utilities::tryGetValueInsensitive(
             Resources::SERVICE_BUS_ENDPOINT_NAME,

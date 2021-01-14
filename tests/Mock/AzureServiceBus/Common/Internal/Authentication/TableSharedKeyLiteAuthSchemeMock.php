@@ -25,7 +25,7 @@
 
 namespace Tests\Mock\AzureServiceBus\Common\Internal\Authentication;
 
-use AzureServiceBus\Common\Internal\Authentication\TableSharedKeyLiteAuthScheme;
+use AzureServiceBus\Common\Internal\Authentication\SharedKeyAuthScheme;
 
 /**
  * Mock class to wrap SharedKeyAuthScheme class.
@@ -38,7 +38,7 @@ use AzureServiceBus\Common\Internal\Authentication\TableSharedKeyLiteAuthScheme;
  *
  * @link       https://github.com/windowsazure/azure-sdk-for-php
  */
-class TableSharedKeyLiteAuthSchemeMock extends TableSharedKeyLiteAuthScheme
+class TableSharedKeyLiteAuthSchemeMock extends SharedKeyAuthScheme
 {
     public function getIncludedHeaders()
     {

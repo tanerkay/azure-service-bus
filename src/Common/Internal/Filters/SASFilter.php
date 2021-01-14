@@ -29,8 +29,6 @@ use AzureServiceBus\Common\Internal\Resources;
 use AzureServiceBus\Common\Internal\Utilities;
 use AzureServiceBus\Common\Internal\IServiceFilter;
 use AzureServiceBus\Common\Internal\Http\IHttpClient;
-use AzureServiceBus\ServiceBus\Internal\WrapTokenManager;
-use AzureServiceBus\ServiceBus\Internal\IWrap;
 use Psr\Http\Message\ResponseInterface;
 
 /**

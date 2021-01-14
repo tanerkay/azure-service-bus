@@ -177,7 +177,6 @@ class Validate
         if (gettype($date) != 'object' || get_class($date) != 'DateTime') {
             throw new InvalidArgumentTypeException('DateTime');
         }
-        $name;
     }
 
     /**
@@ -289,7 +288,6 @@ class Validate
         if ($isValid) {
             return true;
         } else {
-            $name;
             throw new \RuntimeException(
                 sprintf(Resources::INVALID_CONFIG_URI, $uri)
             );

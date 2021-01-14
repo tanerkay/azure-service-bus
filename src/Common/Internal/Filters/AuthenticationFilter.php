@@ -25,6 +25,7 @@
 
 namespace AzureServiceBus\Common\Internal\Filters;
 
+use AzureServiceBus\Common\Internal\Authentication\IAuthScheme;
 use AzureServiceBus\Common\Internal\Resources;
 use AzureServiceBus\Common\Internal\IServiceFilter;
 use AzureServiceBus\Common\Internal\Http\IHttpClient;
@@ -53,9 +54,9 @@ class AuthenticationFilter implements IServiceFilter
     /**
      * Creates AuthenticationFilter with the passed scheme.
      *
-     * @param ITokenProvider $authenticationScheme The authentication scheme
+     * @param IAuthScheme $azureAdTokenProvider The authentication scheme
      */
-    public function __construct(ITokenProvider $azureAdTokenProvider)
+    public function __construct(IAuthScheme $azureAdTokenProvider)
     {
         $this->_azureAdTokenProvider = $azureAdTokenProvider;
     }
