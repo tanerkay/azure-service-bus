@@ -23,7 +23,7 @@
  * @link      https://github.com/windowsazure/azure-sdk-for-php
  */
 
-namespace Tests\functional\AzureServiceBus\ServiceBus;
+namespace Tests\Functional\AzureServiceBus\ServiceBus;
 
 use Tests\Framework\FiddlerFilter;
 use Tests\Framework\ServiceBusRestProxyTestBase;
@@ -99,7 +99,7 @@ class IntegrationTestBase extends ServiceBusRestProxyTestBase
         }
     }
 
-    public static function tearDownAfterClass()
+    public static function tearDownAfterClass(): void
     {
         if (self::$isOneTimeSetup) {
             self::$isOneTimeSetup = false;

@@ -23,7 +23,7 @@
  * @link      https://github.com/windowsazure/azure-sdk-for-php
  */
 
-namespace Tests\functional\AzureServiceBus\ServiceBus;
+namespace Tests\Functional\AzureServiceBus\ServiceBus;
 
 
 use AzureServiceBus\Common\Internal\Utilities;
@@ -103,30 +103,6 @@ class ScenarioTestBase extends IntegrationTestBase
         $customProperties['even'] = ($i % 2 == 0);
 
         return $customProperties;
-    }
-
-    public static function assertEquals($expected, $actual, $message = '', $delta = 0, $maxDepth = 10, $canonicalize = false, $ignoreCase = false)
-    {
-        self::write('  assertEquals(\''.
-                ($expected instanceof \DateTime ?
-                    $expected->format(Resources::AZURE_DATE_FORMAT) :
-                    strval($expected)).'\', \''.
-                ($actual instanceof \DateTime ?
-                    $actual->format(Resources::AZURE_DATE_FORMAT) :
-                    strval($actual)).'\', \''.
-                $message.'\')');
-
-        $effExp = $expected;
-        $effAct = $actual;
-
-        if ($effExp instanceof \DateTime) {
-            $effExp = $effExp->setTimezone(new \DateTimeZone('UTC'));
-        }
-        if ($effAct instanceof \DateTime) {
-            $effAct = $effAct->setTimezone(new \DateTimeZone('UTC'));
-        }
-
-        parent::assertEquals($expected, $actual, $message, $delta, $maxDepth, $canonicalize, $ignoreCase);
     }
 
     protected static function write($message)

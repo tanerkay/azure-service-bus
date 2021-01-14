@@ -27,7 +27,7 @@ namespace Tests\unit\AzureServiceBus\Common\Internal\Authentication;
 
 use Tests\mock\AzureServiceBus\Common\Internal\Authentication\SharedKeyAuthSchemeMock;
 use AzureServiceBus\Common\Internal\Resources;
-use Tests\framework\TestResources;
+use Tests\Framework\TestResources;
 use PHPUnit\Framework\TestCase;
 
 /**

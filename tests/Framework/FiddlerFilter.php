@@ -23,7 +23,7 @@
  * @link      https://github.com/windowsazure/azure-sdk-for-php
  */
 
-namespace Tests\framework;
+namespace Tests\Framework;
 
 use Psr\Http\Message\ResponseInterface;
 use AzureServiceBus\Common\Internal\Http\IHttpClient;

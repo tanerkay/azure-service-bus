@@ -23,7 +23,7 @@
  * @link      https://github.com/WindowsAzure/azure-sdk-for-php
  */
 
-namespace Tests\framework;
+namespace Tests\Framework;
 
 
 use AzureServiceBus\ServiceBus\Internal\IServiceBus;

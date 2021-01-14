@@ -25,7 +25,7 @@
 
 namespace Tests\unit\AzureServiceBus\Common\Internal\Http;
 
-use Tests\framework\TestResources;
+use Tests\Framework\TestResources;
 use Tests\mock\AzureServiceBus\Common\Internal\Filters\SimpleFilterMock;
 use AzureServiceBus\Common\Internal\Resources;
 use AzureServiceBus\Common\Internal\Http\HttpClient;
